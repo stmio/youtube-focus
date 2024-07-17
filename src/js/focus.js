@@ -1,6 +1,6 @@
 function modifyPage() {
   const elems = document.querySelectorAll(
-    "#contents, #chips, #related, .ytd-reel-shelf-renderer"
+    "#contents, #chips, #related, #sections, #footer, .ytd-reel-shelf-renderer"
   );
 
   if (enabled) elems.forEach((elem) => elem.classList.remove("show"));
@@ -15,7 +15,7 @@ function addLocationObserver(callback) {
 
 function observer() {
   const elems = document.querySelectorAll(
-    "#contents, #chips, #related, .ytd-reel-shelf-renderer"
+    "#contents, #chips, #related, #sections, #footer, .ytd-reel-shelf-renderer"
   );
 
   if (!enabled) {
@@ -41,15 +41,6 @@ function observer() {
 function startTimer(duration) {
   sessionEnd = new Date(Date.now() + duration * 60000);
   chrome.storage.sync.set({ sessionEnd: sessionEnd.toJSON() });
-  // const dt = 10000;
-  // await new Promise((resolve) => {
-  //   const interval = setInterval(() => {
-  //     if (Date.now() - sessionEnd > 0) {
-  //       resolve();
-  //       clearInterval(interval);
-  //     }
-  //   }, dt);
-  // });
 }
 
 let sessionEnd;

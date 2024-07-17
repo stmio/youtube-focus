@@ -19,16 +19,15 @@ function init() {
       if (Date.now() - end < 0) {
         toggleButton.classList.add("hide");
         document.getElementById("timer").classList.remove("hide");
-        document.getElementById("mins").textContent = Math.round(
-          (end - Date.now()) / 60000
-        );
+        document.getElementById("mins").textContent = // rounds to 1dp
+          Math.round((10 * (end - Date.now())) / 60000) / 10;
       } else toggleButton.classList.remove("hide");
     } catch (error) {
       console.log("Extension only works on the YouTube website!");
     }
   });
 
-  document.getElementById("toggle").addEventListener("click", toggle);
+  toggleButton.addEventListener("click", toggle);
 }
 
 function toggle() {

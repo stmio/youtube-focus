@@ -6,6 +6,8 @@
 #contents.show,
 #chips.show,
 #related.show,
+#sections.show,
+#footer.show,
 .ytd-reel-shelf-renderer.show {
   display: block !important;
 }
@@ -13,6 +15,8 @@
 #contents,
 #chips,
 #related,
+#sections,
+#footer,
 .ytd-reel-shelf-renderer {
   display: none !important;
 }
